@@ -33,6 +33,7 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
     ![](images/cssVariables.png)
 
 6. If you do not wish to display "stock status" or "price" then this is where you do it. Simply un-comment the code at the bottom of the file.
+
     ![](images/disableOptions.png)
 
 ### Implement on Timberlake
