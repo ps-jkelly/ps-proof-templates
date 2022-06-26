@@ -1,0 +1,28 @@
+{
+    "loadResources": true,
+    "loadButtonCss": true,
+    "loadLocalStock": true,
+    "loadScript": true,
+    "updateTimerSeconds": [
+        0,
+        5,
+        15,
+        30
+    ],
+    "useInitialLoader": true,
+    "useProductLoader": true,
+    "useLocationLoader": true,
+    "map": {
+        "service": "mapboxgl",
+        "mapPushpinSize": [
+            24,
+            32
+        ]
+    },
+    "wtb4": {
+        "active": false,
+        "token": "a78cd763be7c4c0984a3128910f23f00"
+    },
+    "showGenericSellersByUnavailability": "both",
+    "requireSku": "false"
+}

@@ -1,0 +1,80 @@
+/* Variables */
+:root {
+    --dark-text: #043755;
+}
+
+/* Logo */
+div.ps-client-logo.inline.small {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    height: 100%;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.ps-client-logo.inline > div > img {
+    width: 100px;
+}
+
+/* Product Name */
+.ps-product-details > h2.ps-product-name {
+    max-width: 630px;
+}
+
+/* Product Selectors */
+.ps-product-selector {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    max-width: 630px;
+    margin-top: 15px;
+}
+.ps-product-selector > div {
+    display: flex;
+    flex-direction: column;
+}
+.ps-product-selector > div > label {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+.ps-product-selector > div > select {
+    height: auto;
+    width: auto;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-color: var(--dark-text);
+    color: var(--dark-text);
+}
+.bubbles {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 6px 8px !important;
+    text-align: center;
+    background-color: #fff;
+    color: var(--dark-text);
+    border: 1px solid var(--dark-text);
+    border-radius: 25px;
+}
+.bubbles:nth-of-type(1) {
+    background: var(--dark-text);
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    div.ps-client-logo.inline.small {
+        display: none;
+    }
+}
+
+/* Disable Online Seller Options */
+/* 
+.ps-stock-status {
+    display: none;
+}
+.ps-price {
+    display: none;
+} 
+*/
