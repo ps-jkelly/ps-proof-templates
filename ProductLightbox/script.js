@@ -6,6 +6,7 @@ const prodName = "Barrel Reserve Sloe Gin";
 const prodImgUrl = "https://assets.website-files.com/6064c9373e07d699e439019e/6078f77d217967f0c96f6ef5_Untitled%20design%20(2).png";
 const formattedPrice = "$42.99";
 const price = 42.99;
+const isProductSelector = true;
 const isBubbleSelector = false;
 const dropdownSelectors = [
     { "label": "Bottle", "value": "Barrel Reserve Sloe Gin" },
@@ -14,13 +15,13 @@ const dropdownSelectors = [
 ];
 const bubbleSelectors = ["1 Bottle", "6-pack", "12-pack"];
 const onlineSellerImgs = [
-    "https://logodix.com/logo/1327117.jpg",
-    "https://logodix.com/logo/1327117.jpg",
-    "https://logodix.com/logo/1327117.jpg"
+    "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG",
+    "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG",
+    "http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG"
 ]; 
 const localSellerImgs = [
-    "https://logodix.com/logo/1327117.jpg",
-    "https://logodix.com/logo/1327117.jpg"
+    "https://heartofcodes.com/wp-content/uploads/2018/09/Walmart-Logo-PNG-Transparent.png",
+    "https://heartofcodes.com/wp-content/uploads/2018/09/Walmart-Logo-PNG-Transparent.png"
 ];
 
 
@@ -85,11 +86,13 @@ const localSellerImgs = [
 const wtbButton = document.getElementsByClassName("ps-widget")[0];
 wtbButton.addEventListener("click", () => {
     window.setTimeout(() => {
-        isBubbleSelector ?
-            createBubbleSelectors() :
-            createDropdownSelectors();
-        changeLocalSellerImgs();
-        changeOnlineSellerImgs();
+        if (isProductSelector) {
+            isBubbleSelector ?
+                createBubbleSelectors() :
+                createDropdownSelectors();
+        }
+        localSellerImgs.length && changeLocalSellerImgs();
+        onlineSellerImgs.length && changeOnlineSellerImgs();
     }, 1000);
     
 });
