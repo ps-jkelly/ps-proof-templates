@@ -11,7 +11,7 @@
 ---
 
 ## Description
-This repo is a work in progress. Solutions Developers can collaborate here to create templates that can be uploaded to a WTB widget created in Timberlake to improve its use as a proofing tool. These templates will need to be created and updated to account for ongoing changes to the Timberlake tool. The purpose of these templates is to speed up the process of creating proofs in Timberlake without having to extensively rely on editting the widget in the browser or the use of graphic design applications.
+This repo is a work in progress. Solutions Developers can collaborate here to create templates that can be uploaded to a WTB widget created in Timberlake to improve its use as a proofing tool. These templates will need to be created and updated to account for ongoing changes to the Timberlake tool. The purpose of these templates is to speed up the process of creating proofs in Timberlake without having to extensively rely on editting the widget in the browser or the use of graphic design applications. Another benefit is that you can now save your proofs in case you need to go back and edit them. This method allows you to declare your assets and styles upfront in the *script.js* and *override.scc* files and then watch the widget build itself in Timberlake.
 
 ## Instructions
 
@@ -46,7 +46,7 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 10. Click on the variant that you use for creating proofs, or create one if you don't already have one. (for a working example, click on **jk-demo**)
 11. Toggle on *Brand Logo*, *Product Selector*, and *Product Selector Label* if using. Then click Build > Save.
 12. Go to the **Asset Manager** and upload your *script.js* and *override.css* files. Also upload a logo and font if you're using them.
-13. Go back to your widget editor and click Build. You should now see your assets appear in the lightbox. It should look something like the photo below if you did not change any of the variables in the *script.js* file.
+13. Go back to your widget editor and click Build. You should now see your assets and styles appear in the lightbox. It should look something like the photo below if you did not change any of the default variables in the *script.js* or *override.css* files.
 
     ![](images/widgetResult.png)
 
