@@ -9,7 +9,7 @@ const price = 42.99;
 const isProductSelector = true;
 const isBubbleSelector = false;
 const dropdownSelectors = [
-    { "label": "Bottle", "value": "Barrel Reserve Sloe Gin" },
+    { "label": "Type", "value": "Barrel Reserve Sloe Gin" },
     { "label": "Quantity", "value": "1 Bottle" },
     { "label": null, "value": null}
 ];
