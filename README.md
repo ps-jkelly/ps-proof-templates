@@ -46,7 +46,7 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 10. Click on the variant that you use for creating proofs, or create one if you don't already have one. (for a working example, click on **jk-demo**)
 11. Toggle on *Brand Logo*, *Product Selector*, and *Product Selector Label* if using. Then click Build > Save.
 12. Go to the **Asset Manager** and upload your *script.js* and *override.css* files. Also upload a logo and font if you're using them.
-13. Go back to your widget editor and click Build. You should now see your assets and styles appear in the lightbox. It should look something like the photo below if you did not change any of the default variables in the *script.js* or *override.css* files.
+13. Go back to your widget editor and click Build. You should now see your assets and styles appear in the lightbox. Below you can see an example of this in action.
 
     ![](images/widgetResult.png)
 

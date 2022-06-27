@@ -2,20 +2,23 @@
 // VARIABLES
 // =========
 const widgetID = "61c0a3400b9fd9001be2cc80";
-const prodName = "Product Name";
-const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
-const formattedPrice = "$0.00";
-const price = 0.00;
+const prodName = "Barrel Reserve Sloe Gin";
+const prodImgUrl = "https://assets.website-files.com/6064c9373e07d699e439019e/6078f77d217967f0c96f6ef5_Untitled%20design%20(2).png";
+const formattedPrice = "$42.99";
+const price = 42.99;
 const isProductSelector = true;
 const isBubbleSelector = false;
 const dropdownSelectors = [
-    { "label": null, "value": null },
-    { "label": null, "value": null },
-    { "label": null, "value": null}
+    { "label": "Type", "value": "Barrel Reserve Sloe Gin" },
+    { "label": "Quantity", "value": "1 Bottle" },
+    { "label": null, "value": null }
 ];
-const bubbleSelectors = [];
-const onlineSellerImgs = []; 
-const localSellerImgs = [];
+const bubbleSelectors = ["1 Bottle", "6-pack", "12-pack"];
+const onlineSellerImgs = [];
+const localSellerImgs = [
+    "https://beveragedynamics.com/wp-content/uploads/2017/06/bevmo-logo.jpg",
+    "https://www.walgreens.com/images/adaptive/si/1485908_WAG_Signature_logo_RGB_750x208.png"
+];
 
 
 // ================================
@@ -87,7 +90,7 @@ wtbButton.addEventListener("click", () => {
         localSellerImgs.length && changeLocalSellerImgs();
         onlineSellerImgs.length && changeOnlineSellerImgs();
     }, 1000);
-    
+
 });
 
 // FUNCTIONS
@@ -128,5 +131,5 @@ const changeOnlineSellerImgs = () => {
     const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img");
     const lastSeller = document.querySelector(".ps-last-online-seller-details-wrapper > div > img");
     onlineSellers.forEach((seller, index) => seller.src = onlineSellerImgs[index]);
-    lastSeller.src = onlineSellerImgs[onlineSellerImgs.length-1];
+    lastSeller.src = onlineSellerImgs[onlineSellerImgs.length - 1];
 };
