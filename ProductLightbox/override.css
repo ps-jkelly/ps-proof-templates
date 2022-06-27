@@ -10,10 +10,11 @@
     --btn-border-radius: 0px;
     --btn-border-width: 1px;
     --bubbles-border-radius: 0px;
+    --geolocation-border-radius: var(--btn-border-radius);
 }
 
 /* BUTTONS */
-.ps-widget[ps-sku] .ps-enabled, 
+.ps-widget .ps-enabled, 
 .available {
     color: var(--ribbon-text);
     background-color: var(--ribbon-background);
@@ -21,7 +22,7 @@
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 };
-.ps-widget[ps-sku] .ps-disabled, 
+.ps-widget .ps-disabled, 
 .unavailable {
     color: var(--dark-text);
     background-color: var(--light-text);
@@ -102,10 +103,22 @@ div.ps-client-logo.inline > div > img {
 .ps-location > div > span.ps-map-location-button > svg > path {
     fill: var(--search-icons);
 }
+.ps-location>div>span.ps-map-location-button {
+    border-top-right-radius: var(--geolocation-border-radius);
+    border-bottom-right-radius: var(--geolocation-border-radius);
+}
+.ps-location>div>span.ps-map-geolocation-button {
+    border-top-left-radius: var(--geolocation-border-radius);
+    border-bottom-left-radius: var(--geolocation-border-radius);
+}
+.ps-location>div>input {
+    border-radius: var(--geolocation-border-radius);
+}
 
 /* FOOTER */
 .ps-footer {
     background-color: var(--footer-background);
+    border-top-color: var(--footer-text);
 }
 .ps-footer > span > a > svg > path, 
 .ps-footer > div > span {
