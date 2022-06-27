@@ -52,12 +52,12 @@ const localSellerImgs = [
 
     const changeStockStatus = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller, index) => {
-            if (index < 2) {
-                seller.status.inStock = true;
-                seller.stockStatus = 1;
-            } else {
+            if (index === 2) {
                 seller.status.outOfStock = true;
                 seller.stockStatus = 0;
+            } else {
+                seller.status.inStock = true;
+                seller.stockStatus = 1;
             };
         });
     };

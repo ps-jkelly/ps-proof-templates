@@ -9,28 +9,20 @@
     --search-icons: var(--dark-text);
     --btn-border-radius: 0px;
     --btn-border-width: 1px;
-    --bubbles-border-radius: 25px;
+    --bubbles-border-radius: 0px;
 }
 
-/* product name, product selectors,  */
-h2.ps-product-name, .ps-product-selector>div>label, .ps-product-selector>div>select, .bubbles, .unavailable {
-    color: var(--dark-text);
-    border-color: var(--dark-text);
-};
-.ps-ribbon, .ps-footer {
-    background-color: var(--ribbon-background);
-    border-color: var(--ribbon-text);
-};
-
 /* BUTTONS */
-.ps-widget[ps-sku] .ps-enabled, .available {
+.ps-widget[ps-sku] .ps-enabled, 
+.available {
     color: var(--ribbon-text);
     background-color: var(--ribbon-background);
     border-color: var(--dark-text);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 };
-.ps-widget[ps-sku] .ps-disabled, .unavailable {
+.ps-widget[ps-sku] .ps-disabled, 
+.unavailable {
     color: var(--dark-text);
     background-color: var(--light-text);
     border-color: var(--dark-text);
@@ -59,7 +51,6 @@ div.ps-client-logo.inline > div > img {
     max-width: 630px;
     color: var(--dark-text);
 }
-
 .ps-product-selector {
     display: flex;
     flex-direction: row;
@@ -88,7 +79,7 @@ div.ps-client-logo.inline > div > img {
     font-weight: 600;
     padding: 6px 8px !important;
     text-align: center;
-    background-color: #fff;
+    background-color: var(--light-text);
     color: var(--dark-text);
     border: 1px solid var(--dark-text);
     border-radius: var(--bubbles-border-radius);
@@ -101,9 +92,14 @@ div.ps-client-logo.inline > div > img {
 
 /* MAIN */
 .ps-ribbon {
-    background-color: var(--light-text);
+    background-color: var(--ribbon-background);
 }
-.ps-location>div>span.ps-map-geolocation-button>svg>path, .ps-location>div>span.ps-map-location-button>svg>path {
+.ps-lightbox .ps-online-tab-label > h2, 
+.ps-lightbox .ps-local-tab-label > h2 {
+    color: var(--ribbon-text);
+}
+.ps-location > div > span.ps-map-geolocation-button > svg > path, 
+.ps-location > div > span.ps-map-location-button > svg > path {
     fill: var(--search-icons);
 }
 
@@ -111,7 +107,8 @@ div.ps-client-logo.inline > div > img {
 .ps-footer {
     background-color: var(--footer-background);
 }
-.ps-footer>span>a>svg>path, .ps-footer>div>span {
+.ps-footer > span > a > svg > path, 
+.ps-footer > div > span {
     color: var(--footer-text);
     fill: var(--footer-text);
 }
