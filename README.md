@@ -50,16 +50,6 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 
     ![](images/widgetResult.png)
 
-14. For common errors, see below.
 
-
-
-### Troubleshooting
-- It rarely works the first time due to assets loading asynchronously. The "jiggle-the-handle" fix that seems to work best is to simply close and then reopen the lightbox (do not refresh the page). If that doesn't work, then rebuild the file. You may have to do this more than once.
-- **Note:** Eventually, the default images for the online sellers will come back due to a refresh. Just jiggle the handle.
+## Troubleshooting
 - Make sure that `"loadScript"=true` is in the advanced json for the widget.
-- Images of common errors you are likely to see are attached below:
-
-    *-- Stock status not showing properly --*
-
-    ![](images/stockError.png)

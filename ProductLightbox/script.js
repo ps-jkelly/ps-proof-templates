@@ -28,6 +28,8 @@ const localSellerImgs = [];
     psConfig.on("data", function (widget) {
         changeProductName(widget);
         changeProductImage(widget);
+        changeOnlineSellerImgs(widget);
+        changeLocalSellerImgs(widget);
         changeStockStatus(widget);
         changePrice(widget);
         disableStockUpdate(widget);
@@ -41,6 +43,18 @@ const localSellerImgs = [];
 
     const changeProductImage = () => {
         PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
+    };
+
+    const changeOnlineSellerImgs = () => {
+        onlineSellerImgs.forEach((image, index) => {
+            PriceSpider.widgets[0].data.onlineSellers[index].seller.imageUrl = image;
+        });
+    };
+
+    const changeLocalSellerImgs = () => {
+        localSellerImgs.forEach((image, index) => {
+            PriceSpider.widgets[0].data.localSellers[index].seller.imageUrl = image;
+        });
     };
 
     const changeStockStatus = () => {
@@ -119,14 +133,7 @@ const createBubbleSelectors = () => {
     })
 }
 
-const changeLocalSellerImgs = () => {
-    const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-    localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
-};
-
-const changeOnlineSellerImgs = () => {
-    const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img");
-    const lastSeller = document.querySelector(".ps-last-online-seller-details-wrapper > div > img");
-    onlineSellers.forEach((seller, index) => seller.src = onlineSellerImgs[index]);
-    lastSeller.src = onlineSellerImgs[onlineSellerImgs.length-1];
-};
+// const changeLocalSellerImgs = () => {
+//     const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
+//     localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+// };
