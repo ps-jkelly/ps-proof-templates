@@ -52,4 +52,5 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 
 
 ## Troubleshooting
+- Simply closing the lightbox and then re-opening it seems to fix most issues.
 - Make sure that `"loadScript"=true` is in the advanced json for the widget.

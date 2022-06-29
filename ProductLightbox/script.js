@@ -22,14 +22,12 @@ const localSellerImgs = [];
 // MAKE CHANGES TO PRICESPIDER DATA
 // ================================
 (function () {
-    // Change the widgetID to match the widget you're working on.
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
     psConfig.on("data", function (widget) {
         changeProductName(widget);
         changeProductImage(widget);
         changeOnlineSellerImgs(widget);
-        changeLocalSellerImgs(widget);
         changeStockStatus(widget);
         changePrice(widget);
         disableStockUpdate(widget);
@@ -51,20 +49,16 @@ const localSellerImgs = [];
         });
     };
 
-    const changeLocalSellerImgs = () => {
-        localSellerImgs.forEach((image, index) => {
-            PriceSpider.widgets[0].data.localSellers[index].seller.imageUrl = image;
-        });
-    };
-
     const changeStockStatus = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller, index) => {
             if (index === 2) {
                 seller.status.outOfStock = true;
                 seller.stockStatus = 0;
+                seller.status.stock = "Out of Stock";
             } else {
                 seller.status.inStock = true;
                 seller.stockStatus = 1;
+                seller.status.stock = "In Stock";
             };
         });
     };
@@ -97,9 +91,8 @@ wtbButton.addEventListener("click", () => {
             isBubbleSelector ?
                 createBubbleSelectors() :
                 createDropdownSelectors();
-        }
+        };
         localSellerImgs.length && changeLocalSellerImgs();
-        onlineSellerImgs.length && changeOnlineSellerImgs();
     }, 1000);
     
 });
@@ -120,7 +113,7 @@ const createDropdownSelectors = () => {
             product.label && div.appendChild(label);
             let dropdown = div.appendChild(select);
             dropdown.appendChild(option);
-        }
+        };
     });
 };
 
@@ -130,10 +123,10 @@ const createBubbleSelectors = () => {
         let div = selectorDiv.appendChild(document.createElement("div"));
         div.classList.add("bubbles");
         div.appendChild(document.createTextNode(bubbleSelectors[index]));
-    })
-}
+    });
+};
 
-// const changeLocalSellerImgs = () => {
-//     const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-//     localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
-// };
+const changeLocalSellerImgs = () => {
+    const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
+    localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+};
