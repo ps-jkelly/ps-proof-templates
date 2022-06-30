@@ -1,6 +1,6 @@
 /* VARIABLES */
 :root {
-    --dark-text: #000;
+    --dark-text: #043755;
     --light-text: #fff;
     --ribbon-background: var(--dark-text);
     --ribbon-text: var(--light-text);
@@ -9,7 +9,7 @@
     --search-icons: var(--dark-text);
     --btn-color: var(--dark-text);
     --btn-border-width: 1px;
-    --btn-border-radius: 0px;
+    --btn-border-radius: 4px;
     --selectors-border-radius: var(--btn-border-radius);
     --bubbles-border-radius: var(--btn-border-radius);
     --geolocation-border-radius: var(--btn-border-radius);
@@ -27,8 +27,8 @@
 .ps-widget[ps-sku].ps-enabled,
 button.ps-online-buy-button.available {
     color: var(--light-text);
-    background-color: var(--button-color);
-    border-color: var(--button-color);
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 };
@@ -36,7 +36,7 @@ button.ps-online-buy-button.available {
 button.ps-online-buy-button.unavailable {
     color: var(--button-color);
     background-color: var(--light-text);
-    border-color: var(--button-color);
+    border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 };

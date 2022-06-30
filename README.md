@@ -6,7 +6,7 @@
 - [Troubleshooting](#troubleshooting)
 
 ## Available templates:
-[Product Lightbox](https://github.com/ps-jkelly/ps-proof-templates/tree/main/ProductLightbox) 
+[Product Lightbox](https://github.com/ps-jkelly/ps-proof-templates/tree/main/Product_Lightbox), [Product Embedded](https://github.com/ps-jkelly/ps-proof-templates/tree/main/Product_Embedded)
 
 ---
 
@@ -18,7 +18,7 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 ### Copy to your computer
 1. Clone the repository to your computer.
 2. In your client's folder on your computer, create a folder called *proof-productLightbox* (Or whatever type of WTB you're building).
-3. Copy over the *script.js* and *override.js* files into that folder from the correct template. (at the moment, there is only the ProductLightbox template)
+3. Copy over the *script.js* and *override.js* files into that folder from the correct template.
 
 ### The script.js file
 4. Open the *script.js* file and edit the variables to include the assets you want to appear on the screen. 
@@ -54,3 +54,4 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 ## Troubleshooting
 - Simply closing the lightbox and then re-opening it seems to fix most issues.
 - Make sure that `"loadScript"=true` is in the advanced json for the widget.
+- Make sure you're clicking on *Build* after uploading the assets.

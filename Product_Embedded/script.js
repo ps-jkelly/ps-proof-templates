@@ -1,7 +1,7 @@
 // =========
 // VARIABLES
 // =========
-const widgetID = "61c0a3400b9fd9001be2cc80";
+const widgetID = "61c0a34d0b9fd9001be2cc81";
 const prodName = "Product Name";
 const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
 const formattedPrice = "$0.00";
@@ -81,23 +81,18 @@ const localSellerImgs = [];
 })();
 
 
-// ============================================
-// MAKE CHANGES TO THE DOM AFTER LIGHTBOX LOADS
-// ============================================
-const wtbButton = document.getElementsByClassName("ps-widget")[0];
-wtbButton.addEventListener("click", () => {
-    window.setTimeout(() => {
-        if (isProductSelector) {
-            isBubbleSelector ?
-                createBubbleSelectors() :
-                createDropdownSelectors();
-        };
-        localSellerImgs.length && changeLocalSellerImgs();
-    }, 1000);
-    
-});
+// =======================
+// MAKE CHANGES TO THE DOM
+// =======================
+window.setTimeout(() => {
+    if (isProductSelector) {
+        isBubbleSelector ?
+            createBubbleSelectors() :
+            createDropdownSelectors();
+    };
+    localSellerImgs.length && changeLocalSellerImgs();
+}, 2000);
 
-// FUNCTIONS
 const createDropdownSelectors = () => {
     const selectorDiv = document.getElementsByClassName("ps-product-selector")[0];
     dropdownSelectors.forEach((product) => {
@@ -128,5 +123,5 @@ const createBubbleSelectors = () => {
 
 const changeLocalSellerImgs = () => {
     const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-    localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+    localSellerImgs.forEach((image, index) => localSellers[index].src = image);
 };
