@@ -6,7 +6,7 @@
 - [Troubleshooting](#troubleshooting)
 
 ## Available templates:
-[Product Lightbox](https://github.com/ps-jkelly/ps-proof-templates/tree/main/Product_Lightbox), [Product Embedded](https://github.com/ps-jkelly/ps-proof-templates/tree/main/Product_Embedded)
+[Product Lightbox](https://github.com/ps-jkelly/ps-proof-templates/tree/main/templates/Product_Lightbox), [Product Embedded](https://github.com/ps-jkelly/ps-proof-templates/tree/main/templates/Product_Embedded)
 
 ---
 
