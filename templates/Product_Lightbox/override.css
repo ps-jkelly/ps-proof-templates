@@ -35,7 +35,7 @@ button.ps-online-buy-button.available {
 
 .ps-widget[ps-sku].ps-disabled,
 button.ps-online-buy-button.unavailable {
-    color: var(--button-color);
+    color: var(--btn-color);
     background-color: var(--light-text);
     border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
