@@ -33,7 +33,7 @@ button.ps-online-buy-button.available {
     border-width: var(--btn-border-width);
 }
 .ps-widget[ps-sku].ps-disabled,
-button.ps-online-buy-button.unavailable s{
+button.ps-online-buy-button.unavailable {
     color: var(--btn-color);
     background-color: var(--light-text);
     border-color: var(--btn-color);
@@ -57,6 +57,9 @@ div.ps-client-logo.inline>div>img {
 }
 
 /* HEADER */
+.ps-product-image>img {
+    object-fit: contain;
+}
 .ps-product-details>h2.ps-product-name {
     max-width: 630px;
     color: var(--dark-text);
