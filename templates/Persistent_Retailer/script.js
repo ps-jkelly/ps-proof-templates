@@ -23,9 +23,8 @@ const onlineSellerImgs = [];
 (function () {
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
-    psConfig.on("data", async (widget) => {
-        await createOnlineSellers();
-        changeOnlineSellerImgs();
+    psConfig.on("data", (widget) => {
+        createOnlineSellers();
         disableStockUpdate();
         console.log("PriceSpider Data:", PriceSpider.widgets[0].data);
     });
@@ -34,17 +33,12 @@ const onlineSellerImgs = [];
     // Try duplicating onlineSellers in the PriceSpider object and then pushing them to the array.
     const createOnlineSellers = () => {
         const sellers = PriceSpider.widgets[0].data.onlineSellers;
+        let newSeller = sellers[0];
+        newSeller.price = price;
         for (i = sellers.length; i < 4; i++) {
-            sellers.push(sellers[0]);
+            sellers.push(newSeller);
         }
     }
-
-    const changeOnlineSellerImgs = () => {
-        onlineSellerImgs.forEach((image, index) => {
-            console.log(image, index)
-            PriceSpider.widgets[0].data.onlineSellers[index].seller.imageUrl = image;
-        });
-    };
 
     const disableStockUpdate = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
@@ -54,15 +48,13 @@ const onlineSellerImgs = [];
 })();
 
 
+
 // =======================
 // MAKE CHANGES TO THE DOM
 // =======================
 window.setTimeout(() => {
-    if (isProductSelector) {
-        isBubbleSelector ?
-            createBubbleSelectors() :
-            createDropdownSelectors();
-    };
+    createDropdownSelectors();
+    changeOnlineSellerImgs();
 }, 2000);
 
 const createDropdownSelectors = () => {
@@ -84,11 +76,7 @@ const createDropdownSelectors = () => {
     });
 };
 
-const createBubbleSelectors = () => {
-    const selectorDiv = document.getElementsByClassName("ps-product-selector")[0];
-    bubbleSelectors.forEach((product, index) => {
-        let div = selectorDiv.appendChild(document.createElement("div"));
-        div.classList.add("bubbles");
-        div.appendChild(document.createTextNode(bubbleSelectors[index]));
-    });
+const changeOnlineSellerImgs = () => {
+    const onlineSellers = document.querySelectorAll("li.ps-online-seller > div > div > div > img");
+    onlineSellerImgs.forEach((image, index) => onlineSellers[index].src = image);
 };
