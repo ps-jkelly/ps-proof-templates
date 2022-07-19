@@ -115,8 +115,8 @@ div.ps-client-logo.inline > div > img {
     background-color: var(--ribbon-background);
 }
 
-.ps-lightbox .ps-online-tab-label > h2,
-.ps-lightbox .ps-local-tab-label > h2 {
+.ps-lightbox .ps-online-tab-label,
+.ps-lightbox .ps-local-tab-label {
     color: var(--ribbon-text);
 }
 
