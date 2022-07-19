@@ -23,56 +23,30 @@ const onlineSellerImgs = [];
 (function () {
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
-    psConfig.on("data", function (widget) {
-        changeProductName(widget);
-        changeProductImage(widget);
-        changeOnlineSellerImgs(widget);
-        changeStockStatus(widget);
-        changePrice(widget);
-        disableStockUpdate(widget);
+    psConfig.on("data", async (widget) => {
+        await createOnlineSellers();
+        changeOnlineSellerImgs();
+        disableStockUpdate();
         console.log("PriceSpider Data:", PriceSpider.widgets[0].data);
     });
 
     // FUNCTIONS
-    const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = prodName;
-    };
-
-    const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
-    };
+    // Try duplicating onlineSellers in the PriceSpider object and then pushing them to the array.
+    const createOnlineSellers = () => {
+        const sellers = PriceSpider.widgets[0].data.onlineSellers;
+        for (i = sellers.length; i < 4; i++) {
+            sellers.push(sellers[0]);
+        }
+    }
 
     const changeOnlineSellerImgs = () => {
         onlineSellerImgs.forEach((image, index) => {
+            console.log(image, index)
             PriceSpider.widgets[0].data.onlineSellers[index].seller.imageUrl = image;
         });
     };
 
-    const changeStockStatus = () => {
-        PriceSpider.widgets[0].data.onlineSellers.forEach((seller, index) => {
-            if (index === 2) {
-                seller.status.outOfStock = true;
-                seller.stockStatus = 0;
-                seller.status.stock = "Out of Stock";
-            } else {
-                seller.status.inStock = true;
-                seller.stockStatus = 1;
-                seller.status.stock = "In Stock";
-            };
-        });
-    };
-
-    const changePrice = () => {
-        PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
-            seller.price = price;
-            seller.formattedPrice = formattedPrice;
-        });
-    };
-
     const disableStockUpdate = () => {
-        PriceSpider.widgets[0].data.localSellers.forEach((seller) => {
-            seller.stockUpdatable = false;
-        });
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
             seller.stockUpdatable = false;
         });

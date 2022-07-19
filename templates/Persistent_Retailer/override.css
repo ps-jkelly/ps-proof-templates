@@ -2,25 +2,24 @@
 :root {
     --dark-text: #000;
     --light-text: #fff;
-    --ribbon-background: var(--dark-text);
-    --ribbon-text: var(--light-text);
-    --footer-background: var(--ribbon-background);
-    --footer-text: var(--ribbon-text);
-    --search-icons: var(--dark-text);
     --btn-color: var(--dark-text);
     --btn-border-width: 1px;
     --btn-border-radius: 0px;
     --selectors-border-radius: var(--btn-border-radius);
     --bubbles-border-radius: var(--btn-border-radius);
-    --geolocation-border-radius: var(--btn-border-radius);
-    --online-local-background-color: inherit;
+    --header-background-color: inherit;
+    --online-background-color: inherit;
+    --footer-background: var(--light-text);
+    --footer-text: var(--dark-text);
 }
 
 /* BACKGROUNDS */
-.ps-online-tab ul.ps-online-sellers,
-.ps-local-tab,
-.ps-local {
-    background-color: (--online-local-background-color);
+.ps-header {
+    background-color: var(--header-background-color);
+}
+
+.ps-widget ul.ps-online-sellers {
+    background-color: (--online-background-color);
 }
 
 /* BUTTONS */
@@ -39,21 +38,6 @@ button.ps-online-buy-button.unavailable {
     border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
-}
-
-/* LOGO */
-div.ps-client-logo.inline.small {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    height: 100%;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-div.ps-client-logo.inline>div>img {
-    width: 100px;
 }
 
 /* HEADER */
@@ -100,47 +84,16 @@ div.ps-client-logo.inline>div>img {
     border-color: var(--dark-text);
 }
 
-/* MAIN */
-.ps-ribbon {
-    background-color: var(--ribbon-background);
-}
-.ps-lightbox.ps-online-tab-label>h2, 
-.ps-lightbox.ps-local-tab-label>h2 {
-    color: var(--ribbon-text);
-}
-.ps-location>div>span.ps-map-geolocation-button>svg>path, 
-.ps-location>div>span.ps-map-location-button>svg>path {
-    fill: var(--search-icons);
-}
-.ps-location>div>span.ps-map-location-button {
-    border-top-right-radius: var(--geolocation-border-radius);
-    border-bottom-right-radius: var(--geolocation-border-radius);
-}
-.ps-location>div>span.ps-map-geolocation-button {
-    border-top-left-radius: var(--geolocation-border-radius);
-    border-bottom-left-radius: var(--geolocation-border-radius);
-}
-.ps-location>div>input {
-    border-radius: var(--geolocation-border-radius);
-}
-
 /* FOOTER */
 .ps-footer {
     background-color: var(--footer-background);
     border-top-color: var(--footer-text);
 }
-.ps-footer>span>a>svg>path,
-.ps-footer>div>span>a,
-.ps-footer>div>span {
+.ps-footer > span > a > svg > path,
+.ps-footer > div > span > a,
+.ps-footer > div > span {
     color: var(--footer-text);
     fill: var(--footer-text);
-}
-
-/* RESPONSIVE STYLES */
-@media screen and (max-width: 1024px) {
-    div.ps-client-logo.inline.small {
-        display: none;
-    }
 }
 
 /* DISABLE SELLER OPTIONS */
