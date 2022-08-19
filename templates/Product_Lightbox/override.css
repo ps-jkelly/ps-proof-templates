@@ -13,7 +13,7 @@
     --selectors-border-radius: var(--btn-border-radius);
     --bubbles-border-radius: var(--btn-border-radius);
     --geolocation-border-radius: var(--btn-border-radius);
-    --online-local-background-color: inherit;
+    --online-local-background-color: #f7f7f7;
 }
 
 /* BACKGROUNDS */

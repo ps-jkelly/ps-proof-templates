@@ -30,7 +30,6 @@ const onlineSellerImgs = [];
     });
 
     // FUNCTIONS
-    // Try duplicating onlineSellers in the PriceSpider object and then pushing them to the array.
     const createOnlineSellers = () => {
         const sellers = PriceSpider.widgets[0].data.onlineSellers;
         let newSeller = sellers[0];
