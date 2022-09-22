@@ -7,8 +7,8 @@
     --btn-border-radius: 0px;
     --selectors-border-radius: var(--btn-border-radius);
     --bubbles-border-radius: var(--btn-border-radius);
-    --header-background-color: inherit;
-    --online-background-color: inherit;
+    --header-background-color: #f7f7f7;
+    --online-background-color: #f7f7f7;
     --footer-background: var(--light-text);
     --footer-text: var(--dark-text);
 }
