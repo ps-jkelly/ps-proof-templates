@@ -7,18 +7,28 @@
     --footer-background: var(--ribbon-background);
     --footer-text: var(--ribbon-text);
     --search-icons: var(--dark-text);
-    --btn-border-radius: 5px;
+    --btn-color: var(--dark-text);
     --btn-border-width: 1px;
+    --btn-border-radius: 5px;
+    --selectors-border-radius: var(--btn-border-radius);
     --bubbles-border-radius: 25px;
     --geolocation-border-radius: var(--btn-border-radius);
+    --online-local-background-color: #f7f7f7;
+}
+
+/* BACKGROUNDS */
+.ps-online-tab ul.ps-online-sellers,
+.ps-local-tab,
+.ps-local {
+    background-color: var(--online-local-background-color);
 }
 
 /* BUTTONS */
 .ps-widget[ps-sku].ps-enabled,
 button.ps-online-buy-button.available {
-    color: var(--ribbon-text);
-    background-color: var(--ribbon-background);
-    border-color: var(--dark-text);
+    color: var(--light-text);
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 }
@@ -27,9 +37,9 @@ button.ps-online-buy-button.available {
 
 .ps-widget[ps-sku].ps-disabled,
 button.ps-online-buy-button.unavailable {
-    color: var(--dark-text);
+    color: var(--btn-color);
     background-color: var(--light-text);
-    border-color: var(--dark-text);
+    border-color: var(--btn-color);
     border-radius: var(--btn-border-radius);
     border-width: var(--btn-border-width);
 }
@@ -52,22 +62,19 @@ div.ps-client-logo.inline>div>img {
 }
 
 /* HEADER */
+.ps-header {
+    z-index: 3;
+}
+
 .ps-product-details>h2.ps-product-name {
     max-width: 630px;
     color: var(--dark-text);
 }
 
-.ps-product-selector {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    max-width: 630px;
-    margin-top: 15px;
-}
-
-.ps-product-selector>div {
+.ps-product-selector > div {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .ps-product-selector>div>label {
@@ -75,10 +82,10 @@ div.ps-client-logo.inline>div>img {
     color: var(--dark-text);
 }
 
-.ps-product-selector>div>select {
+.ps-product-selector > div > select {
     height: auto;
-    width: auto;
-    padding: 4px 8px;
+    min-width: 150px;
+    padding: 8px;
     border-radius: var(--btn-border-radius);
     border-color: var(--dark-text);
     color: var(--dark-text);
@@ -101,14 +108,27 @@ div.ps-client-logo.inline>div>img {
     border-color: var(--dark-text);
 }
 
+.ps-country-selector-holder > div > span {
+    width: 100px;
+    margin-right: 100px; }
+
 /* MAIN */
 .ps-ribbon {
     background-color: var(--ribbon-background);
 }
 
 .ps-lightbox .ps-online-tab-label>h2,
-.ps-lightbox .ps-local-tab-label>h2 {
+.ps-lightbox .ps-local-tab-label>h2,
+.ps-lightbox .ps-online-tab-label>label,
+.ps-lightbox .ps-local-tab-label>label {
     color: var(--ribbon-text);
+}
+
+.ps-ribbon.ps-desktop-left > div > div.ps-local-tab-label > label:hover, 
+.ps-ribbon.ps-desktop-left > div div.ps-online-tab-label > label:hover, 
+.ps-ribbon.ps-desktop-left > div > div.ps-local-tab-label > h2:hover, 
+.ps-ribbon.ps-desktop-left > div div.ps-online-tab-label > h2:hover {
+    cursor: pointer;
 }
 
 .ps-location>div>span.ps-map-geolocation-button>svg>path,
@@ -143,18 +163,36 @@ div.ps-client-logo.inline>div>img {
 }
 
 /* RESPONSIVE STYLES */
+@media screen and (min-width: 768px) {
+    .ps-product-selector {
+        display: flex;
+        gap: 12px;
+        max-width: 630px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .ps-lightbox .ps-wtb-content.ps-dual-column > .ps-location, 
+    .ps-lightbox .ps-wtb-content.ps-tabbed > .ps-location {
+        background-color: var(--ribbon-background);
+    }
+}
+
 @media screen and (max-width: 1024px) {
     div.ps-client-logo.inline.small {
         display: none;
     }
-}
 
-/* DISABLE SELLER OPTIONS */
-/* 
-.ps-stock-status {
-    display: none;
+    span.ps-link>span {
+        border-radius: 10px;
+        padding: 0 4px;
+        min-width: 70px;
+        background-color: var(--btn-color);
+        color: var(--light-text);
+    }
+
+    input[type="radio"].ps-online-tab-button:checked~.ps-wtb-content .ps-location {
+        display: none;
+    }
 }
-.ps-price {
-    display: none;
-} 
-*/

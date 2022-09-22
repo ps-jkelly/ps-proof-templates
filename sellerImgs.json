@@ -1,0 +1,25 @@
+[
+    {
+        "US": {
+            "amazon": "https://embeddedcloud.pricespider.com/seller_md/2.png",
+            "bed_bath_beyond": "https://embeddedcloud.pricespider.com/seller_md/1232056.png",
+            "costco": "https://embeddedcloud.pricespider.com/seller_md/191.png",
+            "home_depot": "https://embeddedcloud.pricespider.com/seller_md/7027.png",
+            "kohls": "https://embeddedcloud.pricespider.com/seller_md/209030.png",
+            "sears": "https://embeddedcloud.pricespider.com/seller_md/198.png",
+            "target": "https://embeddedcloud.pricespider.com/seller_md/189.png",
+            "walmart": "https://embeddedcloud.pricespider.com/seller_md/167.png"
+        },
+        "CA": {
+            "amazon": "https://embeddedcloud.pricespider.com/seller_md/141172.png",
+            "bed_bath_beyond": "https://embeddedcloud.pricespider.com/seller_md/3864201.png",
+            "costco": "https://embeddedcloud.pricespider.com/seller_md/1504617.png",
+            "home_depot": "https://embeddedcloud.pricespider.com/seller_md/844788.png",
+            "lowes": "https://embeddedcloud.pricespider.com/seller_md/1988836.png",
+            "orgill": "https://team-creations.net/wp-content/uploads/Orgill-Logo-1000x246-1-768x189.png",
+            "princess_auto": "https://embeddedcloud.pricespider.com/seller_md/6977847.png",
+            "wayfair": "https://embeddedcloud.pricespider.com/seller_md/4556056.png",
+            "walmart": "https://embeddedcloud.pricespider.com/seller_md/249918.png"
+        }
+    }
+]

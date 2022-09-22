@@ -13,47 +13,48 @@ const onlineSellerImgs = []; // List of URL strings
 const localSellerImgs = []; // List of URL strings
 
 
-// ==================================
-// MAKE CHANGES TO PRICESPIDER WIDGET
-// ==================================
+// ================================
+// MAKE CHANGES TO PRICESPIDER DATA
+// ================================
 (function () {
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
-    // Manipulate PS data
     psConfig.on("data", function (widget) {
+        onlineSellerImgs.length && createOnlineSellers();
+        disableStockUpdate();
         changeProductName();
         changeProductImage();
-        changeOnlineSellerImgs();
         changeStockStatus();
         changePrice();
-        disableStockUpdate();
         console.log("PriceSpider Data:", PriceSpider.widgets[0].data);
     });
 
-    // Manipulate the DOM
     psConfig.on("open", function (widget) {
-        if (isProductSelector) {
-            isBubbleSelector ?
-                createBubbleSelectors() :
-                createDropdownSelectors();
-        };
-        localSellerImgs.length && changeLocalSellerImgs();
-        onlineSellerImgs.length && changeOnlineSellerImgs();
+        window.setTimeout(() => {
+            if (hasProductSelectors) useBubbleSelectors ? createBubbleSelectors() : createDropdownSelectors();
+            localSellerImgs.length && changeLocalSellerImgs();
+            onlineSellerImgs.length && changeOnlineSellerImgs();
+        }, 1000);
     });
 
-    // FUNCTIONS
+    // DATA FUNCTIONS
     const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = prodName;
+        PriceSpider.widgets[0].data.product.title = productName;
     };
 
     const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
+        PriceSpider.widgets[0].data.product.imageUrl = productImgUrl;
     };
 
-    const changeOnlineSellerImgs = () => {
-        onlineSellerImgs.forEach((image, index) => {
-            PriceSpider.widgets[0].data.onlineSellers[index].seller.imageUrl = image;
-        });
+    const createOnlineSellers = () => {
+        const sellerArray = [];
+        if (PriceSpider.widgets[0].data.onlineSellers.length) {
+            const seller = PriceSpider.widgets[0].data.onlineSellers[0];
+            while (sellerArray.length < onlineSellerImgs.length) {
+                sellerArray.push(seller);
+            };
+        };
+        PriceSpider.widgets[0].data.onlineSellers = sellerArray;
     };
 
     const changeStockStatus = () => {
@@ -86,6 +87,7 @@ const localSellerImgs = []; // List of URL strings
         });
     };
 
+    // DOM FUNCTIONS
     const createDropdownSelectors = () => {
         const selectorDiv = document.getElementsByClassName("ps-product-selector")[0];
         dropdownSelectors.forEach((product) => {
@@ -113,9 +115,16 @@ const localSellerImgs = []; // List of URL strings
             div.appendChild(document.createTextNode(bubbleSelectors[index]));
         });
     };
-    
+
     const changeLocalSellerImgs = () => {
         const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-        localSellerImgs.forEach((image, index) => localSellers[index].src = image);
+        localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+    };
+    
+    const changeOnlineSellerImgs = () => {
+        const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img");
+        const lastSeller = document.querySelector(".ps-last-online-seller-details-wrapper > div > img");
+        onlineSellers.forEach((seller, index) => seller.src = onlineSellerImgs[index]);
+        lastSeller.src = onlineSellerImgs[onlineSellerImgs.length - 1];
     };
 })();
