@@ -11,26 +11,25 @@ const productImgUrl = "https://assets.website-files.com/6064c9373e07d699e439019e
 const price = 42.99;
 const hasProductSelectors = true;
 const useBubbleSelectors = false;
-const country = "CA";
 const dropdownSelectors = [
-    { "label": "Type", "value": "Barrel Reserve Sloe Gin" },
-    { "label": "Quantity", "value": "1 Bottle" },
-    { "label": null, "value": null }
+    { "label": "Select Spirit", "value": "Barrel Reserve Sloe Gin" },
+    { "label": "Select Quantity", "value": "1 Bottle" }
 ];
 const bubbleSelectors = ["1 Bottle", "6-pack", "12-pack"];
 const onlineSellerImgs = [
-    "https://beveragedynamics.com/wp-content/uploads/2017/06/bevmo-logo.jpg",
-    "https://www.walgreens.com/images/adaptive/si/1485908_WAG_Signature_logo_RGB_750x208.png"
+    "https://embeddedcloud.pricespider.com/seller_md/19850226.png",
+    "https://embeddedcloud.pricespider.com/seller_md/11649357.png",
+    "https://embeddedcloud.pricespider.com/seller_md/3838675.png"
 ];
 const localSellerImgs = [
-    "https://beveragedynamics.com/wp-content/uploads/2017/06/bevmo-logo.jpg",
-    "https://www.walgreens.com/images/adaptive/si/1485908_WAG_Signature_logo_RGB_750x208.png"
+    "https://embeddedcloud.pricespider.com/seller_md/19850226.png",
+    "https://embeddedcloud.pricespider.com/seller_md/11641847.png"
 ];
 
 
-// ================================
-// MAKE CHANGES TO PRICESPIDER DATA
-// ================================
+// ==================================
+// MAKE CHANGES TO PRICESPIDER WIDGET
+// ==================================
 (function () {
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
@@ -74,15 +73,10 @@ const localSellerImgs = [
 
     const changeStockStatus = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller, index) => {
-            if (index === 2) {
-                seller.status.outOfStock = true;
-                seller.stockStatus = 0;
-                seller.status.stock = "Out of Stock";
-            } else {
-                seller.status.inStock = true;
-                seller.stockStatus = 1;
-                seller.status.stock = "In Stock";
-            };
+            seller.status.inStock = true;
+            seller.status.outOfStock = false;
+            seller.stockStatus = 1;
+            seller.status.stock = "In Stock";
         });
     };
 
@@ -133,13 +127,11 @@ const localSellerImgs = [
 
     const changeLocalSellerImgs = () => {
         const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-        localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+        localSellerImgs.forEach((image, index) => localSellers[index].src = image);
     };
     
     const changeOnlineSellerImgs = () => {
-        const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img");
-        const lastSeller = document.querySelector(".ps-last-online-seller-details-wrapper > div > img");
-        onlineSellers.forEach((seller, index) => seller.src = onlineSellerImgs[index]);
-        lastSeller.src = onlineSellerImgs[onlineSellerImgs.length - 1];
+        const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img, .ps-last-online-seller-details-wrapper > div > img");
+        onlineSellerImgs.forEach((image, index) => onlineSellers[index].src = image)
     };
 })();

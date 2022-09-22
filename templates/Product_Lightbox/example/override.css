@@ -71,18 +71,19 @@ div.ps-client-logo.inline>div>img {
     color: var(--dark-text);
 }
 
-.ps-product-selector > div {
+.ps-product-selector>div {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
 .ps-product-selector>div>label {
+    margin: 0;
     font-weight: 600;
     color: var(--dark-text);
 }
 
-.ps-product-selector > div > select {
+.ps-product-selector>div>select {
     height: auto;
     min-width: 150px;
     padding: 8px;
@@ -108,9 +109,10 @@ div.ps-client-logo.inline>div>img {
     border-color: var(--dark-text);
 }
 
-.ps-country-selector-holder > div > span {
+.ps-country-selector-holder>div>span {
     width: 100px;
-    margin-right: 100px; }
+    margin-right: 100px;
+}
 
 /* MAIN */
 .ps-ribbon {
@@ -124,10 +126,10 @@ div.ps-client-logo.inline>div>img {
     color: var(--ribbon-text);
 }
 
-.ps-ribbon.ps-desktop-left > div > div.ps-local-tab-label > label:hover, 
-.ps-ribbon.ps-desktop-left > div div.ps-online-tab-label > label:hover, 
-.ps-ribbon.ps-desktop-left > div > div.ps-local-tab-label > h2:hover, 
-.ps-ribbon.ps-desktop-left > div div.ps-online-tab-label > h2:hover {
+.ps-ribbon.ps-desktop-left>div>div.ps-local-tab-label>label:hover,
+.ps-ribbon.ps-desktop-left>div div.ps-online-tab-label>label:hover,
+.ps-ribbon.ps-desktop-left>div>div.ps-local-tab-label>h2:hover,
+.ps-ribbon.ps-desktop-left>div div.ps-online-tab-label>h2:hover {
     cursor: pointer;
 }
 
@@ -163,7 +165,7 @@ div.ps-client-logo.inline>div>img {
 }
 
 /* RESPONSIVE STYLES */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     .ps-product-selector {
         display: flex;
         gap: 12px;
@@ -173,9 +175,14 @@ div.ps-client-logo.inline>div>img {
 }
 
 @media screen and (max-width: 767px) {
-    .ps-lightbox .ps-wtb-content.ps-dual-column > .ps-location, 
-    .ps-lightbox .ps-wtb-content.ps-tabbed > .ps-location {
+    .ps-lightbox .ps-wtb-content.ps-dual-column>.ps-location,
+    .ps-lightbox .ps-wtb-content.ps-tabbed>.ps-location {
         background-color: var(--ribbon-background);
+    }
+
+    .ps-location>small,
+    .ps-location label {
+        padding: 0;
     }
 }
 

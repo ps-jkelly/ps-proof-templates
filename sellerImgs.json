@@ -1,13 +1,20 @@
 [
     {
         "US": {
+            "ace_hardware": "https://embeddedcloud.pricespider.com/seller_md/7057.png",
+            "advance_auto_parts": "https://embeddedcloud.pricespider.com/seller_md/988631.png",
             "amazon": "https://embeddedcloud.pricespider.com/seller_md/2.png",
             "bed_bath_beyond": "https://embeddedcloud.pricespider.com/seller_md/1232056.png",
+            "bevmo": "https://embeddedcloud.pricespider.com/seller_md/19850226.png",
             "costco": "https://embeddedcloud.pricespider.com/seller_md/191.png",
+            "drizly": "https://embeddedcloud.pricespider.com/seller_md/11649357.png",
             "home_depot": "https://embeddedcloud.pricespider.com/seller_md/7027.png",
             "kohls": "https://embeddedcloud.pricespider.com/seller_md/209030.png",
+            "pet_smart": "https://embeddedcloud.pricespider.com/seller_md/989036.png",
+            "safeway": "https://embeddedcloud.pricespider.com/seller_md/3838675.png",
             "sears": "https://embeddedcloud.pricespider.com/seller_md/198.png",
             "target": "https://embeddedcloud.pricespider.com/seller_md/189.png",
+            "total_wine_more": "https://embeddedcloud.pricespider.com/seller_md/11641847.png",
             "walmart": "https://embeddedcloud.pricespider.com/seller_md/167.png"
         },
         "CA": {
