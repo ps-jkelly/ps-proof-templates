@@ -13,9 +13,9 @@ const onlineSellerImgs = []; // List of URL strings
 const localSellerImgs = []; // List of URL strings
 
 
-// ================================
-// MAKE CHANGES TO PRICESPIDER DATA
-// ================================
+// ==================================
+// MAKE CHANGES TO PRICESPIDER WIDGET
+// ==================================
 (function () {
     const psConfig = PriceSpider.widgetConfigs[widgetID];
 
@@ -59,15 +59,10 @@ const localSellerImgs = []; // List of URL strings
 
     const changeStockStatus = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller, index) => {
-            if (index === 2) {
-                seller.status.outOfStock = true;
-                seller.stockStatus = 0;
-                seller.status.stock = "Out of Stock";
-            } else {
-                seller.status.inStock = true;
-                seller.stockStatus = 1;
-                seller.status.stock = "In Stock";
-            };
+            seller.status.inStock = true;
+            seller.status.outOfStock = false;
+            seller.stockStatus = 1;
+            seller.status.stock = "In Stock";
         });
     };
 
@@ -118,13 +113,11 @@ const localSellerImgs = []; // List of URL strings
 
     const changeLocalSellerImgs = () => {
         const localSellers = document.querySelectorAll(".ps-logo", ".ps-local-seller-button");
-        localSellers.forEach((seller, index) => seller.src = localSellerImgs[index]);
+        localSellerImgs.forEach((image, index) => localSellers[index].src = image);
     };
     
     const changeOnlineSellerImgs = () => {
-        const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img");
-        const lastSeller = document.querySelector(".ps-last-online-seller-details-wrapper > div > img");
-        onlineSellers.forEach((seller, index) => seller.src = onlineSellerImgs[index]);
-        lastSeller.src = onlineSellerImgs[onlineSellerImgs.length - 1];
+        const onlineSellers = document.querySelectorAll(".ps-online-seller-details-wrapper > div > img, .ps-last-online-seller-details-wrapper > div > img");
+        onlineSellerImgs.forEach((image, index) => onlineSellers[index].src = image)
     };
 })();

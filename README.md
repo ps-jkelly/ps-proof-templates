@@ -22,27 +22,55 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 
 ### The script.js file
 4. Open the *script.js* file and edit the variables to include the assets you want to appear on the screen. 
-    - Change the **widgetID** to match the widget you're working on.
+    - The **widgetID** is set to the template widget in the Prospective Demo account and doesn't need to be changed.
     - Change **prodName** and **prodImgUrl** to match a product of your choice.
     - The variables **price** and **formattedPrice** change the price displayed for online retailers.
     - If you're using product selectors, set **isProductSelector** to **true**. If you plan to use bubble selectors, set **isBubbleSelector** to **true**. Change the values of the **dropdownSelectors/bubbleSelectors** to whatever you want to display.
-    - Change the array values for **onlineSellerImgs** and **localSellerImgs** to be the URLs for the retailers you wish to display. Or you can make these arrays empty and the default sellers will appear. For online, the default sellers are Amazon, Walmart, and Target. For local, the default sellers will be whatever our crawler picked up for the test sku that you input into the widget.
+    - Change the array values for **onlineSellerImgs** and **localSellerImgs** to be the URLs for the retailers you wish to display. Or you can make these arrays empty and the default sellers will appear. For online, the default sellers are Amazon, Walmart, and Target. For local, the default sellers will be whatever our crawler picked up for the test sku that you input into the widget. You can find a list of PriceSpider images [here](https://github.com/ps-jkelly/ps-proof-templates/blob/main/sellerImgs.json). 
+    
+        [Example script.js file](https://github.com/ps-jkelly/ps-proof-templates/blob/main/templates/Product_Lightbox/example/script.js)
 
-    ![](images/scriptVariables.png)
+        ```javascript
+        const widgetID = "61c0a3400b9fd9001be2cc80";
+        const prodName = "Product Name";
+        const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
+        const price = 0.00;
+        const hasProductSelectors = true;
+        const useBubbleSelectors = false;
+        const dropdownSelectors = []; // List of objects. Example: { "label": "Product", "value": "Honey Nut Cheerios" }
+        const bubbleSelectors = []; // List of strings
+        const onlineSellerImgs = []; // List of URL strings
+        const localSellerImgs = []; // List of URL strings
+        ```
 
 ### The override.css file
-5. Change the variables to apply the color and border styles you wish to see in the widget. Feel free to make any other changes to the file that you deem necessary for your proof.
+5. Change the variables to apply the color and border styles you wish to see in the widget. Feel free to make any other changes to the file that you deem necessary for your proof. 
 
-    ![](images/cssVariables.png)
+    [Example override.css file](https://github.com/ps-jkelly/ps-proof-templates/blob/main/templates/Product_Lightbox/example/override.css)
 
-6. If you wish to disable "stock status" or "price" then this is where you do it. Simply un-comment the code at the bottom of the file.
-
-    ![](images/disableOptions.png)
+    ```css
+    :root {
+        --dark-text: #000;
+        --light-text: #fff;
+        --ribbon-background: var(--dark-text);
+        --ribbon-text: var(--light-text);
+        --footer-background: var(--ribbon-background);
+        --footer-text: var(--ribbon-text);
+        --search-icons: var(--dark-text);
+        --btn-color: var(--dark-text);
+        --btn-border-width: 1px;
+        --btn-border-radius: 0px;
+        --selectors-border-radius: var(--btn-border-radius);
+        --bubbles-border-radius: var(--btn-border-radius);
+        --geolocation-border-radius: var(--btn-border-radius);
+        --online-local-background-color: #f7f7f7;
+    }
+    ```
 
 ### Implement on Timberlake
 7. Log into *Prospective Demo* on Insights.
 8. Log into Timberlake and select *Templates* from the "Select a Brand" dropdown.
-9. Select the widget type and then widget you want to make. (for now, select only *Stadard (Product)* > *Product Lightbox*)
+9. Select the widget type and then the widget you want to make.
 10. Click on the variant that you use for creating proofs, or create one if you don't already have one. (for a working example, click on **jk-demo**)
 11. Toggle on *Brand Logo*, *Product Selector*, and *Product Selector Label* if using. Then click Build > Save.
 12. Go to the **Asset Manager** and upload your *script.js* and *override.css* files. Also upload a logo and font if you're using them.
