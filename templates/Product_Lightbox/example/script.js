@@ -9,6 +9,7 @@ const widgetID = "61c0a3400b9fd9001be2cc80";
 const productName = "Barrel Reserve Sloe Gin";
 const productImgUrl = "https://assets.website-files.com/6064c9373e07d699e439019e/6078f77d217967f0c96f6ef5_Untitled%20design%20(2).png";
 const price = 42.99;
+const hasReviews = true;
 const hasProductSelectors = true;
 const useBubbleSelectors = false;
 const dropdownSelectors = [
@@ -35,6 +36,7 @@ const localSellerImgs = [
 
     psConfig.on("data", function (widget) {
         onlineSellerImgs.length && createOnlineSellers();
+        hasReviews && addOnlineReviews();
         disableStockUpdate();
         changeProductName();
         changeProductImage();
@@ -53,11 +55,11 @@ const localSellerImgs = [
 
     // DATA FUNCTIONS
     const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = productName;
+        PriceSpider.widgets[0].data.product.title = prodName;
     };
 
     const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = productImgUrl;
+        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
     };
 
     const createOnlineSellers = () => {
@@ -83,7 +85,6 @@ const localSellerImgs = [
     const changePrice = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
             seller.price = price;
-            seller.formattedPrice = formattedPrice;
         });
     };
 
@@ -95,6 +96,15 @@ const localSellerImgs = [
             seller.stockUpdatable = false;
         });
     };
+
+    const addOnlineReviews = () => {
+        PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
+            seller.reviews = {
+                count: Math.floor(Math.random() * (150 - 30) + 30),
+                ratio: Math.random() * (1.0 - 0.7) + 0.7
+            }
+        })
+    }
 
     // DOM FUNCTIONS
     const createDropdownSelectors = () => {

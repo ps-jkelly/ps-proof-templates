@@ -41,11 +41,11 @@ const localSellerImgs = []; // List of URL strings
 
     // DATA FUNCTIONS
     const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = productName;
+        PriceSpider.widgets[0].data.product.title = prodName;
     };
 
     const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = productImgUrl;
+        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
     };
 
     const createOnlineSellers = () => {
