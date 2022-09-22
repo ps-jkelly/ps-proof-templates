@@ -5,7 +5,8 @@ const widgetID = "61c0a3400b9fd9001be2cc80";
 const prodName = "Product Name";
 const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
 const price = 0.00;
-const hasProductSelectors = true;
+const hasReviews = false;
+const hasProductSelectors = false;
 const useBubbleSelectors = false;
 const dropdownSelectors = []; // List of objects. Example: { "label": "Product", "value": "Honey Nut Cheerios" }
 const bubbleSelectors = []; // List of strings
@@ -21,6 +22,7 @@ const localSellerImgs = []; // List of URL strings
 
     psConfig.on("data", function (widget) {
         onlineSellerImgs.length && createOnlineSellers();
+        hasReviews && addOnlineReviews();
         disableStockUpdate();
         changeProductName();
         changeProductImage();
@@ -69,7 +71,6 @@ const localSellerImgs = []; // List of URL strings
     const changePrice = () => {
         PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
             seller.price = price;
-            seller.formattedPrice = formattedPrice;
         });
     };
 
@@ -81,6 +82,15 @@ const localSellerImgs = []; // List of URL strings
             seller.stockUpdatable = false;
         });
     };
+
+    const addOnlineReviews = () => {
+        PriceSpider.widgets[0].data.onlineSellers.forEach((seller) => {
+            seller.reviews = {
+                count: Math.floor(Math.random() * (150 - 30) + 30),
+                ratio: Math.random() * (1.0 - 0.7) + 0.7
+            }
+        })
+    }
 
     // DOM FUNCTIONS
     const createDropdownSelectors = () => {
