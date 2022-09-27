@@ -60,7 +60,8 @@ button.ps-online-buy-button.unavailable {
     font-weight: 600;
     color: var(--dark-text);
 }
-.ps-product-selector>div>select {
+.ps-product-selector>div>select,
+.ps-product-selector>div>.single {
     height: auto;
     width: auto;
     padding: 4px 8px;

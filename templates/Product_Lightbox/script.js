@@ -2,16 +2,19 @@
 // VARIABLES
 // =========
 const widgetID = "61c0a3400b9fd9001be2cc80";
-const prodName = "Product Name";
-const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
+const productName = "Product Name";
+const ProductImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
 const price = 0.00;
 const hasReviews = false;
 const hasProductSelectors = false;
 const useBubbleSelectors = false;
-const dropdownSelectors = []; // List of objects. Example: { "label": "Product", "value": "Honey Nut Cheerios" }
-const bubbleSelectors = []; // List of strings
-const onlineSellerImgs = []; // List of URL strings
-const localSellerImgs = []; // List of URL strings
+const dropdownSelectors = [
+    { "label": null, "value": null },
+    { "label": null, "value": null }
+];
+const bubbleSelectors = []; // Array of strings
+const onlineSellerImgs = []; // Array of URL strings
+const localSellerImgs = []; // Array of URL strings
 
 
 // ==================================
@@ -41,11 +44,11 @@ const localSellerImgs = []; // List of URL strings
 
     // DATA FUNCTIONS
     const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = prodName;
+        PriceSpider.widgets[0].data.product.title = productName;
     };
 
     const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
+        PriceSpider.widgets[0].data.product.imageUrl = ProductImgUrl;
     };
 
     const createOnlineSellers = () => {

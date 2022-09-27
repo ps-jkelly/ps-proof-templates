@@ -24,20 +24,23 @@ This repo is a work in progress. Solutions Developers can collaborate here to cr
 4. Open the *script.js* file and edit the variables to include the assets you want to appear on the screen. 
     - The **widgetID** is set to the template widget in the Prospective Demo account and doesn't need to be changed.
     - Change **prodName** and **prodImgUrl** to match a product of your choice.
-    - The variables **price** and **formattedPrice** change the price displayed for online retailers.
-    - If you're using product selectors, set **isProductSelector** to **true**. If you plan to use bubble selectors, set **isBubbleSelector** to **true**. Change the values of the **dropdownSelectors/bubbleSelectors** to whatever you want to display.
+    - The variable **price** changes the price displayed for online retailers.
+    - If you're using product selectors, set **hasProductSelectors** to **true**. If you plan to use bubble selectors, set **useBubbleSelectors** to **true**. Change the values of the **dropdownSelectors/bubbleSelectors** to whatever you want to display.
     - Change the array values for **onlineSellerImgs** and **localSellerImgs** to be the URLs for the retailers you wish to display. Or you can make these arrays empty and the default sellers will appear. For online, the default sellers are Amazon, Walmart, and Target. For local, the default sellers will be whatever our crawler picked up for the test sku that you input into the widget. You can find a list of PriceSpider images [here](https://github.com/ps-jkelly/ps-proof-templates/blob/main/sellerImgs.json). 
     
         [Example script.js file](https://github.com/ps-jkelly/ps-proof-templates/blob/main/templates/Product_Lightbox/example/script.js)
 
         ```javascript
         const widgetID = "61c0a3400b9fd9001be2cc80";
-        const prodName = "Product Name";
-        const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
+        const productName = "Product Name";
+        const productImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
         const price = 0.00;
         const hasProductSelectors = true;
         const useBubbleSelectors = false;
-        const dropdownSelectors = []; // List of objects. Example: { "label": "Product", "value": "Honey Nut Cheerios" }
+        const dropdownSelectors = [
+            { "label": null, "value": null },
+            { "label": null, "value": null }
+        ];
         const bubbleSelectors = []; // List of strings
         const onlineSellerImgs = []; // List of URL strings
         const localSellerImgs = []; // List of URL strings

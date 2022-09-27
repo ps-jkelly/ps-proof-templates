@@ -2,16 +2,15 @@
 // VARIABLES
 // =========
 const widgetID = "62b5ff35fe35a600195fa0f9";
-const prodName = "Product Name";
-const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
+const productName = "Product Name";
+const productImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
 const formattedPrice = "$0.00";
 const price = 0.00;
 const isProductSelector = true;
 const isBubbleSelector = false;
 const dropdownSelectors = [
     { "label": null, "value": null },
-    { "label": null, "value": null },
-    { "label": null, "value": null}
+    { "label": null, "value": null }
 ];
 const bubbleSelectors = [];
 const onlineSellerImgs = []; 

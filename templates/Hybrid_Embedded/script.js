@@ -2,15 +2,14 @@
 // VARIABLES
 // =========
 const widgetID = "61c0a3a06330b100273377f4";
-const prodName = "Product Name";
-const prodImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
+const productName = "Product Name";
+const productImgUrl = "https://www.neudesic.com/wp-content/uploads/priceSpider.jpg";
 const price = 0.00;
 const isProductSelector = true;
 const isBubbleSelector = false;
 const dropdownSelectors = [
     { "label": null, "value": null },
-    { "label": null, "value": null },
-    { "label": null, "value": null}
+    { "label": null, "value": null }
 ];
 const bubbleSelectors = [];
 const onlineSellerImgs = []; 
@@ -43,11 +42,11 @@ const localSellerImgs = [];
 
     // FUNCTIONS
     const changeProductName = () => {
-        PriceSpider.widgets[0].data.product.title = prodName;
+        PriceSpider.widgets[0].data.product.title = productName;
     };
 
     const changeProductImage = () => {
-        PriceSpider.widgets[0].data.product.imageUrl = prodImgUrl;
+        PriceSpider.widgets[0].data.product.imageUrl = productImgUrl;
     };
 
     const changeOnlineSellerImgs = async () => {
